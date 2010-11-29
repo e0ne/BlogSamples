@@ -1,0 +1,22 @@
+<html>
+	<head>
+		<title>JavaScript Error Sample</title>
+		
+		<script type="text/javascript">
+			function errorSample() {
+				var button = document.getElementById("someButton");
+				try {
+					button.click();
+				}
+				catch (e) {
+					document.write(e.name + ':' + e.message);
+				}
+			}
+		</script>
+
+	</head>
+	<body onload="errorSample();" >
+		<div id="someButton">
+		</div>
+	</body>
+</html>

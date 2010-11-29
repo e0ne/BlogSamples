@@ -1,0 +1,25 @@
+<html>
+	<head>
+		<title>JavaScript Error Sample</title>
+		
+		<script type="text/javascript">
+			function sample1() {
+				throw "Error!";
+			}
+			
+			function sample2() {
+				throw new Error("Some Error");
+			}
+			
+			function sample3() {
+				throw {name:"Custom Error", message:"Custom error message"};				
+			}
+		</script>
+
+	</head>
+	<body>
+		<input type="button" value="Sample 1" onclick="sample1();"/>
+		<input type="button" value="Sample 2" onclick="sample2();"/>
+		<input type="button" value="Sample 3" onclick="sample3();"/>
+	</body>
+</html>
