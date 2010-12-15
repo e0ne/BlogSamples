@@ -1,0 +1,36 @@
+<html>
+	<head>
+		<title> Пример простого модального окна на HTML </html>
+		<link rel="stylesheet" type="text/css" href="styles.css"/>
+		
+		<script type="text/javascript" src="jquery.min.js">
+		</script>
+		
+		<script type="text/javascript">
+			function show() {
+				alert("show dialog");
+				$("#dlg-background").addClass("dlg-background");
+				$("#dlg-content").addClass("dlg-content");
+				$("#dlg-content").css("display","block");
+			}
+			
+			function hide() {
+				$("#dlg-background").removeClass("dlg-background");
+				$("#dlg-content").removeClass("dlg-content");
+				$("#dlg-content").css("display","none");
+			}
+		</script>
+	</head>
+	<body>
+		<input type="button" onclick="show();" value="show" /> <br />
+		<input type="text" />
+		
+		<div id="dlg-background"></div>
+		<div id="dlg-content" style="display:none;">
+			Содержимое диалогового окна <br />
+			<br />
+			<input type="text" /> <br />
+			<input type="button" onclick="hide();" value="hide"/>
+		<div>
+	</body>
+</html>

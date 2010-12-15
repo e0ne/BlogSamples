@@ -1,0 +1,26 @@
+.dlg-background{
+	background-color:gray;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	z-index: 90;
+	display:block;
+	opacity:.32;
+	top:0;
+	left:0;
+	margin: 0px 0px;
+}
+
+.dlg-content{
+	background-color:white;
+	padding: 10px 10px;
+	display:block;
+	position: absolute;
+	left:200px;
+	top:150px;
+	z-index:100;
+}
+
+.dlg-pointer{
+	display:none;
+}
