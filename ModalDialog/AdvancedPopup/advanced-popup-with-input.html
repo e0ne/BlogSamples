@@ -1,0 +1,58 @@
+﻿<html>
+	<head>
+		<title> Пример простого модального окна на HTML </title>
+		<link rel="stylesheet" type="text/css" href="styles.css"/>
+		
+		<script type="text/javascript" src="jquery.min.js">
+		</script>
+		
+		<script type="text/javascript">
+			function show() {
+				$(document.body).wrapInner("<div id='body-container' />");
+				$("<div id='dlg-marker'/>").insertBefore($("#dlg-content"));
+				$(document.body).prepend($("#dlg-content"));				
+				// disable page content.
+				$("#body-container").attr('disabled', true);
+				// for webkit based browsers
+				$("#body-container > input, option").each(function(){
+					$(this).attr('disabled', true);
+				});
+				$("#dlg-background").addClass("dlg-background");
+				$("#dlg-content").addClass("dlg-content");
+				$("#dlg-content").css("display","block");
+			}
+			
+			function hide() {
+				$('#body-container').removeAttr('disabled');
+				$("#dlg-background").removeClass("dlg-background");
+				$("#dlg-content").insertAfter($("#dlg-marker"));
+				$("#dlg-marker").detach();
+				var html = $('#body-container').html();
+				$('#body-container').detach();
+				
+				
+				$(document.body).html(html);
+				
+				// for webkit based browsers
+				$("input, option").each(function(){
+					$(this).removeAttr('disabled');
+				});
+				
+				$("#dlg-content").removeClass("dlg-content");
+				$("#dlg-content").css("display","none");
+			}
+		</script>
+	</head>
+	<body>
+		<input type="button" onclick="show();" value="show" /> <br />
+		<input type="text" />
+		
+		<div id="dlg-background"></div>
+		<div id="dlg-content" style="display:none;">
+			Содержимое диалогового окна <br />
+			<br />
+			<input type="text" /> <br />
+			<input type="button" onclick="hide();" value="hide"/>
+		</div>
+	</body>
+</html>
