@@ -7,13 +7,5 @@ from django.conf.urls.defaults import patterns, include, url
 urlpatterns = patterns('',
     (r'^$', 'dlp.views.index'),
     (r'^updates$', 'dlp.views.updates'),
-    # Examples:
-    #url(r'^d/', 'djangolp.dlp.views.index', name='home'),
-    # url(r'^djangolp/', include('djangolp.foo.urls')),
-
-    # Uncomment the admin/doc line below to enable admin documentation:
-    # url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
-
-    # Uncomment the next line to enable the admin:
-    # url(r'^admin/', include(admin.site.urls)),
+    (r'^updates2$', 'dlp.views.updates2'),
 )
