@@ -1,0 +1,50 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title>Django and jQuery Template Sample</title>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.6.4.js"></script>
+    <script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jquery.templates/beta1/jquery.tmpl.js"></script>
+    <script type="text/javascript">
+
+        $(document).ready(function(){
+            var data = [
+                {'input':'text', 'name': 'text input', 'description':'text input description', 'highlight': true, 'color':'red'},
+                {'input':'text', 'name': 'text input2', 'description':'text input description2', 'highlight': true, 'color':'red'},
+                {'input':'text', 'name': 'text input2', 'description':'text input description3', 'highlight': false, 'color':'green'}
+            ]
+
+            $("#items-template").tmpl(data).appendTo($("#items-body"));
+        })
+
+    </script>
+</head>
+<body>
+    <table id="items-table">
+        <tbody id="items-body">
+            <tr>
+                <td>input</td>
+                <td>name</td>
+                <td>description</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <script id="items-template" type="text/x-jquery-tmpl">
+        <tr>
+            <td>${input}</td>
+            <td>
+                {% templatetag openvariable %}if highlight{% templatetag closevariable %}
+                    <div style="background-color: ${color}">
+                {% templatetag openvariable %}else{% templatetag closevariable %}
+                    <div>
+                {% templatetag openvariable %}/if{% templatetag closevariable %}
+                    ${name}
+                </div>
+
+            </td>
+            <td>${description}</td>
+        </tr>
+    </script>
+</body>
+</html>
