@@ -1,8 +1,6 @@
 from django.contrib import admin
 from django.db import models
 
-# Create your models here.
-
 class BaseModel(models.Model):
     POSITION = (
         (1, 'First'),
