@@ -2,6 +2,8 @@ from django.contrib import admin
 from django.db import models
 
 class BaseModel(models.Model):
+"""
+"""
     POSITION = (
         (1, 'First'),
         (2, 'Second'),
