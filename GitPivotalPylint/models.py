@@ -3,7 +3,7 @@ from django.db import models
 
 class BaseModel(models.Model):
 """
-
+Base model
 """
     POSITION = (
         (1, 'First'),
