@@ -33,7 +33,7 @@ class Middleware(object):
                     return None
 
         #Otherwise it's not a mobile
-        request.mobile = True
+        request.mobile = False
         return None
 
 def detect_mobile(view):

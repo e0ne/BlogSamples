@@ -102,14 +102,12 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.messages.middleware.MessageMiddleware',
 )
 
-TEMPLATE_CONTEXT_PROCESSORS = (
-  'django.core.context_processors.request',
-)
-
 ROOT_URLCONF = 'MobileTest.urls'
 
-TEMPLATE_DIRS = (os.path.join(os.getcwd(), 'templates'),)
-
+TEMPLATE_DIRS = ('/path/to/templates',)
+TEMPLATE_CONTEXT_PROCESSORS = (
+  'django.core.context_processors.request',
+  )
 INSTALLED_APPS = (
     'django.contrib.auth',
     'django.contrib.contenttypes',
