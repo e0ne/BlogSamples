@@ -15,15 +15,15 @@ class BaseTestCase(unittest.TestCase):
         self.browser = browser
 
     @staticmethod
-    def parametrize(testcase_klass, browser=None):
+    def parametrize(testcase_class, browser=None):
         """ Create a suite containing all tests taken from the given
             subclass, passing them the parameter 'param'.
         """
         testloader = unittest.TestLoader()
-        testnames = testloader.getTestCaseNames(testcase_klass)
+        testnames = testloader.getTestCaseNames(testcase_class)
         suite = unittest.TestSuite()
         for name in testnames:
-            suite.addTest(testcase_klass(name, browser=browser))
+            suite.addTest(testcase_class(name, browser=browser))
         return suite
 
 
