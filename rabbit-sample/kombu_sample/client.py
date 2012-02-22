@@ -25,7 +25,7 @@ if __name__ == "__main__":
     from kombu.utils.debug import setup_logging
     setup_logging(loglevel="INFO")
 
-    with BrokerConnection("amqp://guest:guest@192.168.17.25:5672//") as conn:
+    with BrokerConnection("amqp://guest:guest@localhost:5672//") as conn:
         try:
             Worker(conn).run()
         except KeyboardInterrupt:
